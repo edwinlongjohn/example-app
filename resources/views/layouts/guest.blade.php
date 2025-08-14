@@ -62,19 +62,9 @@
           </div>
           <div class="collapse navbar-collapse" id="navHeader">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class='dropdown-item' href='index.html'>Home 001</a>
-                  </li>
-                  <li>
-                    <a class='dropdown-item' href='index-2.html'>Home 02</a>
-                  </li>
-                  <li>
-                    <a class='dropdown-item' href='index-3.html'>Home 03</a>
-                  </li>
-                </ul>
+              <li class="nav-item ">
+                <a class="nav-link" href="{{route('home')}}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+               
               </li>
               <li class="nav-item ">
                 <a class='nav-link' href='featured-posts.html'>Featured</a>
@@ -86,7 +76,7 @@
                 <a class='nav-link' href='archive.html'>Archive</a>
               </li>
               <li class="nav-item ">
-                <a class='nav-link' href='about.html'>About</a>
+                <a class='nav-link' href='{{route('about')}}'>About</a>
               </li>
               <li class="nav-item ">
                 <a class='nav-link' href='contact.html'>Contact</a>
