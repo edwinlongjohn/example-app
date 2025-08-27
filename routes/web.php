@@ -1,13 +1,12 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
 Route::get('/about-us', [WelcomeController::class, 'about'])->name('about');
-Route::get('/category', [CategoryController::class, 'category'])->name('category');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
