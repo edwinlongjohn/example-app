@@ -85,10 +85,10 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class='dropdown-item' href='authors.html'>Authors</a>
+                    <a class='dropdown-item' href='{{route('login')}}'>Login</a>
                   </li>
                   <li>
-                    <a class='dropdown-item' href='author-single.html'>Author Single</a>
+                    <a class='dropdown-item' href='{{route('register')}}'>Register</a>
                   </li>
                   <li>
                     <a class='dropdown-item' href='tags.html'>Tags</a>
