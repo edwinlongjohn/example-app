@@ -14,24 +14,18 @@
                     <div class="col-xl-4 col-lg-5 col-md-6">
                         <div class="ps-0 ps-xl-4">
                             <div id="mc_embed_signup">
-                                <form action="#" method="post" id="mc-embedded-subscribe-form"
-                                    name="mc-embedded-subscribe-form" target="_blank">
+                                <form action="{{route('login')}}" method="post"  >@csrf
+                                   @foreach ($errors->all() as $error)
+                                        <p class="alert alert-danger text-danger">{{$error}}</p>
+                                   @endforeach
                                     <div id="mc_embed_signup_scroll" class="input-group">
-                                        <input type="email" value="" name="email" class="form-control w-100"
+                                        <input type="email"  name="email" class="form-control w-100"
                                             placeholder="Email" aria-label="Name">
-                                        <input type="password" value="" name="password"
+                                        <input type="password"  name="password"
                                             class="form-control w-100 required email" placeholder="enter your password"
                                             aria-label="Subscription" autocomplete="new-email" required>
-                                        <div id="mce-responses" class="clear">
-                                            <div class="response" id="mce-error-response" style="display:none"></div>
-                                            <div class="response" id="mce-success-response" style="display:none"></div>
-                                        </div>
-                                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                                            <input type="text" name="b_92641572a6c6ec43da15feed0_d28bb2454f"
-                                                tabindex="-1" value="">
-                                        </div>
                                         <div class="input-group-append w-100">
-                                            <button type="submit" name="subscribe" id="mc-embedded-subscribe"
+                                            <button type="submit" name="subscribe"
                                                 class="input-group-text w-100 mb-0" aria-label="Subscription Button">
                                                 Login Now <i class="ti ti-arrow-up-right ms-auto"></i>
                                             </button>
