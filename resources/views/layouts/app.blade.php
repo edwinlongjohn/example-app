@@ -405,8 +405,8 @@
                                         <span class="menu-arrow"></span>
                                     </a>
                                     <ul>
-                                        <li><a href="{{route('admin.add.blog')}}">Add Blog</a></li>
-                                        <li><a href="{{route('admin.blogs')}}">Blogs</a></li>
+                                        <li><a href="{{route('admin.post.create')}}">Add Blog</a></li>
+                                        <li><a href="{{route('admin.post.index')}}">Blogs</a></li>
                                         <li><a href="{{route('admin.categories')}}">Blog Categories</a></li>
                                         <li><a href="#">Blog Comments</a></li>
                                     </ul>

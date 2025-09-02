@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
@@ -16,10 +18,9 @@ Route::get('/category', [CategoryController::class, 'category'])->name('category
 
 Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(function () {
    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-   Route::get('/blogs', [DashboardController::class, 'blogs'])->name('blogs');
-   Route::get('/add-blogs', [DashboardController::class, 'addBlog'])->name('add.blog');
-   Route::get('/categories', [DashboardController::class, 'categories'])->name('categories');
-   Route::get('/blog-details', [DashboardController::class, 'blogDetails'])->name('blog.details');
+   Route::resource('post', PostController::class);
+   Route::get('/categories', [CategoryController::class, 'categories'])->name('categories');
+   Route::post('/add-category', [CategoryController::class, 'submitCategory'])->name('add.category');
 });
 
 Route::middleware('auth')->group(function () {
