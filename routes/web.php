@@ -12,7 +12,11 @@ Route::get('/about-us', [WelcomeController::class, 'about'])->name('about');
 
 Route::get('/category', [CategoryController::class, 'category'])->name('category');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(function () {
+   Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
