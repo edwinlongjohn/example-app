@@ -16,6 +16,10 @@ Route::get('/category', [CategoryController::class, 'category'])->name('category
 
 Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(function () {
    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+   Route::get('/blogs', [DashboardController::class, 'blogs'])->name('blogs');
+   Route::get('/add-blogs', [DashboardController::class, 'addBlog'])->name('add.blog');
+   Route::get('/categories', [DashboardController::class, 'categories'])->name('categories');
+   Route::get('/blog-details', [DashboardController::class, 'blogDetails'])->name('blog.details');
 });
 
 Route::middleware('auth')->group(function () {
