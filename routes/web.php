@@ -17,6 +17,8 @@ Route::get('/category', [CategoryController::class, 'category'])->name('category
 Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/categories', [AdminCategoryController::class, 'categories'])->name('admin.categories');
+    Route::post('/add-category', [AdminCategoryController::class, 'addCategory'])->name('admin.add.category');
+
 });
 
 Route::middleware('auth')->group(function () {
